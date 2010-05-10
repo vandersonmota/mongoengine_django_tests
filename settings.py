@@ -10,7 +10,6 @@ ADMINS = (
 MANAGERS = ADMINS
 
 NOSQL_DATABASE_NAME = 'example'
-TEST_RUNNER = 'mongotest.MongoEngineTestRunner'
 
 DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
 DATABASE_NAME = 'test.db'             # Or path to database file if using sqlite3.

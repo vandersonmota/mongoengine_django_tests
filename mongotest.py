@@ -9,23 +9,6 @@ from mongoengine.connection import _get_db
 
 __all__ = ['MongoEngineTestRunner', 'MongoEngineTestCase']
 
-class MongoEngineTestRunner(DjangoTestSuiteRunner):
-
-    db_name = settings.NOSQL_DATABASE_NAME
-
-    def setup_databases(self, **kwargs):
-        connect(self.db_name)
-        print 'Creating mongodb test database: ' + self.db_name
-
-        return super(MongoEngineTestRunner, self).setup_databases()
-
-    def teardown_databases(self, old_config):
-
-        super(MongoEngineTestRunner, self).teardown_databases(old_config)
-        conn = Connection()
-        conn.drop_database(self.db_name)
-        print 'Destroying mongodb test database: ' + self.db_name
-
 class MongoEngineTestCase(TestCase):
     """
     TestCase class that clear the collection between the tests
