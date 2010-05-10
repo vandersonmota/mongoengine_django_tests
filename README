@@ -3,7 +3,21 @@ Vanderson Mota (vanderson.mota@gmail.com)
 Bernardo Fontes (bernardoxhc@gmail.com)
 
 
------
-Usage;
+Usage:
+======
 
-Just check the project source =)
+All you have to do is use MongoEngineTestCase as the base class for your test cases. Here is a simple example:
+
+    from example.models import Book
+    from mongotest import MongoEngineTestCase
+
+    class ExampleTestCase(MongoEngineTestCase):
+        def test_Book_creation(self):
+            self.assertFalse(Book.objects())
+            Book(name='The Book', pages=500).save()
+            self.assertTrue(Book.objects())
+
+
+for this, you must define a NOSQL_DATABASE_NAME in your settings.py file, like so:
+
+    NOSQL_DATABASE_NAME = 'example'
