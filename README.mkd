@@ -1,6 +1,7 @@
 Authors:
-Vanderson Mota (vanderson.mota@gmail.com)
-Bernardo Fontes (bernardoxhc@gmail.com)
+
+* Vanderson Mota (vanderson.mota@gmail.com)
+* Bernardo Fontes (bernardoxhc@gmail.com)
 
 
 Usage:
