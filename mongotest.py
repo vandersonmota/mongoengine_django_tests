@@ -7,7 +7,7 @@ from django.conf import settings
 from mongoengine import connect
 from mongoengine.connection import _get_db
 
-__all__ = ['MongoEngineTestRunner', 'MongoEngineTestCase']
+__all__ = ['MongoEngineTestCase']
 
 class MongoEngineTestCase(TestCase):
     """
@@ -22,4 +22,3 @@ class MongoEngineTestCase(TestCase):
         super(MongoEngineTestCase, self)._post_teardown()
         con = Connection()
         con.drop_database(self.db_name)
-
