@@ -14,11 +14,13 @@ class MongoEngineTestCase(TestCase):
     TestCase class that clear the collection between the tests
     """
     db_name = 'test_%s' % settings.NOSQL_DATABASE_NAME
-    def _pre_setup(self):
-        super(MongoEngineTestCase, self)._pre_setup()
-        connect(self.db_name)
+    def __init__(self, methodName='runtest'):
+        self.db = connect(self.db_name)
+        super(MongoEngineTestCase, self).__init__(methodName)
 
     def _post_teardown(self):
         super(MongoEngineTestCase, self)._post_teardown()
-        con = Connection()
-        con.drop_database(self.db_name)
+        for collection in self.db.collection_names():
+            if collection == 'system.indexes':
+                continue
+            self.db.drop_collection(collection)
