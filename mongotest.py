@@ -1,11 +1,8 @@
 #coding: utf-8
-from pymongo import Connection
-from django.test.simple import *
 from django.test import TestCase
 from django.conf import settings
 
 from mongoengine import connect
-from mongoengine.connection import _get_db
 
 __all__ = ['MongoEngineTestCase']
 
