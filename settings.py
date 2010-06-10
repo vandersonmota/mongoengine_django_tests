@@ -9,7 +9,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-NOSQL_DATABASE_NAME = 'example'
+MONGO_DATABASE_NAME = 'example'
 
 DATABASE_ENGINE = 'sqlite3'           # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
 DATABASE_NAME = 'test.db'             # Or path to database file if using sqlite3.

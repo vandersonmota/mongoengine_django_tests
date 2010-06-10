@@ -1,8 +1,8 @@
 #coding: utf-8
 from example.models import Book
-from mongotest import MongoEngineTestCase
+from mongotest import MongoTestCase
 
-class ExampleTestCase(MongoEngineTestCase):
+class ExampleTestCase(MongoTestCase):
     def test_Book_creation(self):
         self.assertFalse(Book.objects())
         Book(name='The Book', pages=500).save()
